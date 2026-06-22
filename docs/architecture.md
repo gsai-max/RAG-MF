@@ -246,8 +246,10 @@ A dedicated scheduler component runs the full ingestion pipeline on a fixed dail
 |---|---|
 | **Cron** (Linux/macOS crontab or container cron) | Simple VM / bare-metal deployment |
 | **APScheduler** (embedded in a worker process) | Single-process Python deployment |
-| **GitHub Actions** scheduled workflow | Repo-hosted corpus refresh with no dedicated worker |
+| **GitHub Actions** scheduled workflow (Implemented) | Repo-hosted corpus refresh with no dedicated worker |
 | **Cloud scheduler** (AWS EventBridge, GCP Cloud Scheduler) | Managed production environments |
+
+*Note: In this project, the **GitHub Actions** option has been implemented and is configured at [daily-scheduler.yml](file:///c:/Nextleap%20Projects%20Git/RAGMF/.github/workflows/daily-scheduler.yml) to run `scheduler/daily.py --now` daily at 9:15 AM IST (03:45 UTC), with manual trigger support.*
 
 * **Scheduler flow:**
 ```mermaid
