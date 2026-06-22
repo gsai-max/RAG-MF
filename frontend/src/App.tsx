@@ -71,6 +71,8 @@ const DEFAULT_FUNDS: Fund[] = [
   }
 ];
 
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+
 export default function App() {
   // Navigation tab for mobile view: 'chat' | 'history' | 'funds'
   const [activeTab, setActiveTab] = useState<'chat' | 'history' | 'funds'>('chat');
@@ -96,14 +98,11 @@ export default function App() {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
-  // Simple history of past user prompts
-  const [promptHistory, setPromptHistory] = useState<string[]>([]);
-  
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Fetch fund registry metadata from the backend
   useEffect(() => {
-    fetch('/api/funds')
+    fetch(`${API_BASE}/api/funds`)
       .then(res => {
         if (!res.ok) throw new Error("Backend server error");
         return res.json();
@@ -171,7 +170,6 @@ export default function App() {
     };
     
     setMessages(prev => [...prev, newUserMessage]);
-    setPromptHistory(prev => [cleanText, ...prev.filter(p => p !== cleanText)]);
     setInputText('');
     setIsLoading(true);
 
@@ -191,7 +189,7 @@ export default function App() {
     }
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
