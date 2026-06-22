@@ -1,0 +1,59 @@
+name: Daily Ingestion Scheduler
+
+on:
+  schedule:
+    # Run daily at 03:45 UTC (9:15 AM IST)
+    - cron: '45 3 * * *'
+  workflow_dispatch:
+    # Allow manual execution via the Actions tab in GitHub
+    inputs:
+      force:
+        description: 'Force fetching fresh content instead of using cache'
+        type: boolean
+        required: false
+        default: false
+      limit:
+        description: 'Limit the number of schemes to process (for testing)'
+        type: number
+        required: false
+
+jobs:
+  run-scheduler:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Ingestion Script
+      env:
+        ENV: prod
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        CHROMA_DB_PATH: data/index/
+        LOG_LEVEL: INFO
+      run: |
+        # Parse inputs if triggered manually
+        FLAGS=""
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            FLAGS="$FLAGS --force"
+          fi
+          if [ -n "${{ github.event.inputs.limit }}" ]; then
+            FLAGS="$FLAGS --limit ${{ github.event.inputs.limit }}"
+          fi
+        fi
+        
+        # Execute daily.py with --now to run once and exit
+        python scheduler/daily.py --now $FLAGS
