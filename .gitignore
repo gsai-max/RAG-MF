@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+data/raw/
+data/processed/
+data/index/
+data/index_A/
+data/index_B/
+data/test_index/
+*.db
+*.log
+
+# Frontend build & dependencies
+node_modules/
+dist/
+.env.local
+.env.production
+.env.development
+.env.staging
+

@@ -1,0 +1,332 @@
+schemes:
+- slug: icici-prudential-silver-etf-fof-direct-growth
+  scheme_name: ICICI Prudential Silver ETF FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-silver-etf-fof-direct-growth
+- slug: icici-prudential-large-cap-fund-direct-growth
+  scheme_name: ICICI Prudential Large Cap Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-large-cap-fund-direct-growth
+- slug: icici-prudential-dynamic-plan-direct-growth
+  scheme_name: ICICI Prudential Multi Asset Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-dynamic-plan-direct-growth
+- slug: icici-prudential-bharat-22-fof-direct-growth
+  scheme_name: ICICI Prudential BHARAT 22 FOF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-bharat-22-fof-direct-growth
+- slug: icici-prudential-technology-fund-direct-growth
+  scheme_name: ICICI Prudential Technology Direct Plan-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-technology-fund-direct-growth
+- slug: icici-prudential-short-term-plan-direct-growth
+  scheme_name: ICICI Prudential Short Term Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-short-term-plan-direct-growth
+- slug: icici-prudential-nifty-next-50-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty Next 50 Index Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-next-50-index-fund-direct-growth
+- slug: icici-prudential-infrastructure-fund-direct-growth
+  scheme_name: ICICI Prudential Infrastructure Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-infrastructure-fund-direct-growth
+- slug: icici-prudential-commodities-fund-direct-growth
+  scheme_name: ICICI Prudential Commodities Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-commodities-fund-direct-growth
+- slug: icici-prudential-balanced-direct-growth
+  scheme_name: ICICI Prudential Equity & Debt Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-balanced-direct-growth
+- slug: icici-prudential-flexicap-fund-direct-growth
+  scheme_name: ICICI Prudential Flexicap Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-flexicap-fund-direct-growth
+- slug: icici-prudential-gold-etf-fof-direct-growth
+  scheme_name: ICICI Prudential Gold ETF FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-gold-etf-fof-direct-growth
+- slug: icici-prudential-top-100-fund-direct-growth
+  scheme_name: ICICI Prudential Large & Mid Cap Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-top-100-fund-direct-growth
+- slug: icici-prudential-nifty-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty 50 Index Direct Plan-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-index-fund-direct-growth
+- slug: icici-prudential-pharma-healthcare-and-diagnostics-(p.h.d)-fund-direct-growth
+  scheme_name: ICICI Prudential Pharma Healthcare and Diagnostics (P.H.D) Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-pharma-healthcare-and-diagnostics-(p.h.d)-fund-direct-growth
+- slug: icici-prudential-retirement-fund-pure-equity-plan-direct-growth
+  scheme_name: ICICI Prudential Retirement Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-retirement-fund-pure-equity-plan-direct-growth
+- slug: icici-prudential-liquid-fund-direct-plan-growth
+  scheme_name: ICICI Prudential Liquid Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-liquid-fund-direct-plan-growth
+- slug: icici-prudential-value-direct-growth
+  scheme_name: ICICI Prudential Value Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-value-direct-growth
+- slug: icici-prudential-energy-opportunities-fund-direct-growth
+  scheme_name: ICICI Prudential Energy Opportunities Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-energy-opportunities-fund-direct-growth
+- slug: icici-prudential-indo-asia-equity-fund-direct-growth
+  scheme_name: ICICI Prudential Smallcap Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-indo-asia-equity-fund-direct-growth
+- slug: icici-prudential-india-opportunities-fund-direct-growth
+  scheme_name: ICICI Prudential India Opportunities Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-india-opportunities-fund-direct-growth
+- slug: icici-prudential-multicap-fund-direct-growth
+  scheme_name: ICICI Prudential Multicap Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-multicap-fund-direct-growth
+- slug: icici-prudential-midcap-fund-direct-growth
+  scheme_name: ICICI Prudential Midcap Direct Plan-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-midcap-fund-direct-growth
+- slug: icici-prudential-balanced-advantage-fund-direct-growth
+  scheme_name: ICICI Prudential Balanced Advantage Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-balanced-advantage-fund-direct-growth
+- slug: icici-prudential-corporate-bond-fund-direct-plan-growth
+  scheme_name: ICICI Prudential Corporate Bond Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-corporate-bond-fund-direct-plan-growth
+- slug: icici-prudential-nifty-it-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty IT Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-it-index-fund-direct-growth
+- slug: icici-prudential-india-equity-fof-direct-growth
+  scheme_name: ICICI Prudential India Equity FOF Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-india-equity-fof-direct-growth
+- slug: icici-prudential-manufacturing-fund-direct-growth
+  scheme_name: ICICI Prudential Manufacturing Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-manufacturing-fund-direct-growth
+- slug: icici-prudential-select-large-cap-fund-direct-growth
+  scheme_name: ICICI Prudential Focused Equity Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-select-large-cap-fund-direct-growth
+- slug: icici-prudential-nifty200-value-30-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty200 Value 30 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty200-value-30-index-fund-direct-growth
+- slug: icici-prudential-nifty-midcap-150-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty Midcap 150 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-midcap-150-index-fund-direct-growth
+- slug: icici-prudential-aggressive-hybrid-active-fof-direct-growth
+  scheme_name: ICICI Prudential Aggressive Hybrid Active FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-aggressive-hybrid-active-fof-direct-growth
+- slug: icici-prudential-dividend-yield-equity-fund-direct-growth
+  scheme_name: ICICI Prudential Dividend Yield Equity Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-dividend-yield-equity-fund-direct-growth
+- slug: icici-prudential-nifty-smallcap-250-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty Smallcap 250 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-smallcap-250-index-fund-direct-growth
+- slug: icici-prudential-business-cycle-fund-direct-growth
+  scheme_name: ICICI Prudential Business Cycle Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-business-cycle-fund-direct-growth
+- slug: icici-prudential-regular-i-come-fund-direct-growth
+  scheme_name: ICICI Prudential Ultra Short Term Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-regular-i-come-fund-direct-growth
+- slug: icici-prudential-banking-psu-debt-fund-direct-growth
+  scheme_name: ICICI Prudential Banking & PSU Debt Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-banking-psu-debt-fund-direct-growth
+- slug: icici-prudential-active-momentum-fund-direct-growth
+  scheme_name: ICICI Prudential Active Momentum Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-active-momentum-fund-direct-growth
+- slug: icici-prudential-nifty-ev-new-age-automotive-etf-fof-direct-growth
+  scheme_name: ICICI Prudential Nifty EV & New Age Automotive ETF FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-ev-new-age-automotive-etf-fof-direct-growth
+- slug: icici-prudential-innovation-fund-direct-growth
+  scheme_name: ICICI Prudential Innovation Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-innovation-fund-direct-growth
+- slug: icici-prudential-nifty-pharma-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty Pharma Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-pharma-index-fund-direct-growth
+- slug: icici-prudential-diversified-equity-all-cap-omni-fof-direct-growth
+  scheme_name: ICICI Prudential Diversified Equity All Cap Omni FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-diversified-equity-all-cap-omni-fof-direct-growth
+- slug: icici-prudential-children's-fund-direct-growth
+  scheme_name: ICICI Prudential Children's Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-children's-fund-direct-growth
+- slug: icici-prudential-psu-equity-fund-direct-growth
+  scheme_name: ICICI Prudential PSU Equity Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-psu-equity-fund-direct-growth
+- slug: icici-prudential-transportation-and-logistics-fund-direct-growth
+  scheme_name: ICICI Prudential Transportation and Logistics Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-transportation-and-logistics-fund-direct-growth
+- slug: isif-equity-ex-top-100-long-short-fund-direct-growth
+  scheme_name: iSIF Equity Ex-Top 100 Long-Short Fund
+  source_url: https://groww.in/mutual-funds/isif-equity-ex-top-100-long-short-fund-direct-growth
+- slug: icici-prudential-regular-savings-fund-direct-growth
+  scheme_name: ICICI Prudential Regular Savings Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-regular-savings-fund-direct-growth
+- slug: icici-prudential-nifty-largemidcap-250-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty LargeMidcap 250 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-largemidcap-250-index-fund-direct-growth
+- slug: icici-prudential-retirement-fund-hybrid-aggressive-plan-direct-growth
+  scheme_name: ICICI Prudential Retirement Fund (Hybrid Aggressive Plan)
+  source_url: https://groww.in/mutual-funds/icici-prudential-retirement-fund-hybrid-aggressive-plan-direct-growth
+- slug: icici-prudential-bse-sensex-index-fund-direct-growth
+  scheme_name: ICICI Prudential BSE Sensex Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-bse-sensex-index-fund-direct-growth
+- slug: icici-prudential-debt-management-fund-(fof)-direct-plan-growth
+  scheme_name: ICICI Prudential Debt Management Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-debt-management-fund-(fof)-direct-plan-growth
+- slug: icici-prudential-nifty-auto-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty Auto Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-auto-index-fund-direct-growth
+- slug: icici-prudential-long-term-plan-direct-growth
+  scheme_name: ICICI Prudential All Seasons Bond Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-long-term-plan-direct-growth
+- slug: icici-prudential-fmcg-direct-growth
+  scheme_name: ICICI Prudential FMCG Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-fmcg-direct-growth
+- slug: icici-prudential-i-come-plus-arbitrage-omni-fof-direct-growth
+  scheme_name: ICICI Prudential Income Plus Arbitrage Omni FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-i-come-plus-arbitrage-omni-fof-direct-growth
+- slug: icici-prudential-nifty-500-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty 500 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-500-index-fund-direct-growth
+- slug: icici-prudential-elss-tax-saver-direct-plan-growth
+  scheme_name: ICICI Prudential ELSS Tax Saver Direct Plan-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-elss-tax-saver-direct-plan-growth
+- slug: icici-prudential-nifty50-value-20-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty50 Value 20 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty50-value-20-index-fund-direct-growth
+- slug: icici-prudential-banking-and-financial-services-fund-direct-growth
+  scheme_name: ICICI Prudential Banking and Financial Services Direct Plan-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-banking-and-financial-services-fund-direct-growth
+- slug: icici-prudential-arbitrage-direct-growth
+  scheme_name: ICICI Prudential Arbitrage Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-arbitrage-direct-growth
+- slug: icici-prudential-credit-risk-fund-direct-growth
+  scheme_name: ICICI Prudential Credit Risk Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-credit-risk-fund-direct-growth
+- slug: icici-prudential-dynamic-asset-allocation-active-fof-direct-growth
+  scheme_name: ICICI Prudential Dynamic Asset Allocation Active FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-dynamic-asset-allocation-active-fof-direct-growth
+- slug: icici-prudential-multi-sector-passive-fof-direct-growth
+  scheme_name: ICICI Prudential Multi Sector Passive FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-multi-sector-passive-fof-direct-growth
+- slug: icici-prudential-bharat-consumption-fund-direct-growth
+  scheme_name: ICICI Prudential Bharat Consumption Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-bharat-consumption-fund-direct-growth
+- slug: icici-prudential-diversified-equity-all-cap-active-fof-direct-growth
+  scheme_name: ICICI Prudential Diversified Equity All Cap Active FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-diversified-equity-all-cap-active-fof-direct-growth
+- slug: icici-prudential-thematic-advantage-fund-(fof)direct-growth
+  scheme_name: ICICI Prudential Thematic Advantage Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-thematic-advantage-fund-(fof)direct-growth
+- slug: icici-prudential-equity-i-come-fund-direct-growth
+  scheme_name: ICICI Prudential Equity Savings Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-equity-i-come-fund-direct-growth
+- slug: isif-hybrid-long-short-fund-direct-growth
+  scheme_name: iSIF Hybrid Long-Short Fund
+  source_url: https://groww.in/mutual-funds/isif-hybrid-long-short-fund-direct-growth
+- slug: icici-prudential-nifty-200-momentum-30-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty 200 Momentum 30 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-200-momentum-30-index-fund-direct-growth
+- slug: icici-prudential-long-term-gilt-fund-direct-growth
+  scheme_name: ICICI Prudential Gilt Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-long-term-gilt-fund-direct-growth
+- slug: icici-prudential-passive-strategy-fund-(fof)-direct-growth
+  scheme_name: ICICI Prudential Passive Strategy Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-passive-strategy-fund-(fof)-direct-growth
+- slug: icici-prudential-floating-interest-fund-direct-plan-growth
+  scheme_name: ICICI Prudential Floating Interest Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-floating-interest-fund-direct-plan-growth
+- slug: icici-prudential-crisil-ibx-financial-services-3-6-months-debt-index-fund-direct-growth
+  scheme_name: ICICI Prudential CRISIL-IBX Financial Services 3-6 Months Debt Index
+    Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-crisil-ibx-financial-services-3-6-months-debt-index-fund-direct-growth
+- slug: icici-prudential-i-come-plus-arbitrage-active-fof-direct-growth
+  scheme_name: ICICI Prudential Income Plus Arbitrage Active FoF Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-i-come-plus-arbitrage-active-fof-direct-growth
+- slug: icici-prudential-savings-fund-direct-plan-growth
+  scheme_name: ICICI Prudential Savings Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-savings-fund-direct-plan-growth
+- slug: icici-prudential-quality-fund-direct-growth
+  scheme_name: ICICI Prudential Quality Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-quality-fund-direct-growth
+- slug: icici-prudential-rural-opportunities-fund-direct-growth
+  scheme_name: ICICI Prudential Rural Opportunities Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-rural-opportunities-fund-direct-growth
+- slug: icici-prudential-corporate-bond-fund-direct-growth
+  scheme_name: ICICI Prudential Medium Term Bond Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-corporate-bond-fund-direct-growth
+- slug: icici-prudential-nifty50-equal-weight-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty50 Equal Weight Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty50-equal-weight-index-fund-direct-growth
+- slug: icici-prudential-overnight-fund-direct-growth
+  scheme_name: ICICI Prudential Overnight Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-overnight-fund-direct-growth
+- slug: icici-prudential-i-come-fund-direct-growth
+  scheme_name: ICICI Prudential Long Term Bond Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-i-come-fund-direct-growth
+- slug: icici-prudential-asset-allocator-fund-(fof)-direct-growth
+  scheme_name: ICICI Prudential Asset Allocator Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-asset-allocator-fund-(fof)-direct-growth
+- slug: icici-prudential-nifty-top-15-equal-weight-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty Top 15 Equal Weight Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-top-15-equal-weight-index-fund-direct-growth
+- slug: icici-prudential-housing-opportunities-fund-direct-growth
+  scheme_name: ICICI Prudential Housing Opportunities Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-housing-opportunities-fund-direct-growth
+- slug: icici-prudential-nifty-bank-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty Bank Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-bank-index-fund-direct-growth
+- slug: icici-prudential-conglomerate-fund-direct-growth
+  scheme_name: ICICI Prudential Conglomerate Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-conglomerate-fund-direct-growth
+- slug: icici-prudential-diversified-debt-strategy-active-fof-direct-growth
+  scheme_name: ICICI Prudential Diversified Debt Strategy Active FoF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-diversified-debt-strategy-active-fof-direct-growth
+- slug: icici-prudential-money-market-fund-direct-growth
+  scheme_name: ICICI Prudential Money Market Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-money-market-fund-direct-growth
+- slug: icici-prudential-retirement-fund-hybrid-conservative-plan-direct-growth
+  scheme_name: ICICI Prudential Retirement Fund (Hybrid Conservative Plan)
+  source_url: https://groww.in/mutual-funds/icici-prudential-retirement-fund-hybrid-conservative-plan-direct-growth
+- slug: icici-prudential-equity-minimum-variance-fund-direct-growth
+  scheme_name: ICICI Prudential Equity Minimum Variance Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-equity-minimum-variance-fund-direct-growth
+- slug: icici-prudential-nifty200-quality-30-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty200 Quality 30 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty200-quality-30-index-fund-direct-growth
+- slug: icici-prudential-nifty-private-bank-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty Private Bank Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-private-bank-index-fund-direct-growth
+- slug: icici-prudential-nifty-alpha-low-volatility-30-etf-fof-direct-growth
+  scheme_name: ICICI Prudential Nifty Alpha Low - Volatility 30 ETF FOF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-alpha-low-volatility-30-etf-fof-direct-growth
+- slug: icici-prudential-esg-exclusionary-strategy-fund-direct-growth
+  scheme_name: ICICI Prudential ESG Exclusionary Strategy Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-esg-exclusionary-strategy-fund-direct-growth
+- slug: icici-prudential-mnc-fund-direct-growth
+  scheme_name: ICICI Prudential MNC Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-mnc-fund-direct-growth
+- slug: icici-prudential-nifty-100-low-volatility-30-etf-fof-direct-growth
+  scheme_name: ICICI Prudential Nifty 100 Low Volatility 30 ETF FOF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-100-low-volatility-30-etf-fof-direct-growth
+- slug: icici-prudential-retirement-fund-pure-debt-plan-direct-growth
+  scheme_name: ICICI Prudential Retirement Fund (Pure Debt Plan)
+  source_url: https://groww.in/mutual-funds/icici-prudential-retirement-fund-pure-debt-plan-direct-growth
+- slug: isif-equity-long-short-fund-direct-growth
+  scheme_name: iSIF Equity Long-Short Fund
+  source_url: https://groww.in/mutual-funds/isif-equity-long-short-fund-direct-growth
+- slug: icici-prudential-exports-and-other-services-fund-direct-growth
+  scheme_name: ICICI Prudential Exports and Services Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-exports-and-other-services-fund-direct-growth
+- slug: icici-prudential-nifty-psu-bond-plus-sdl-sep-2027-40-60-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty PSU Bond Plus SDL Sep 2027 40:60 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-psu-bond-plus-sdl-sep-2027-40:60-index-fund-direct-growth
+- slug: icici-prudential-bse-500-etf-fof-direct-growth
+  scheme_name: ICICI Prudential BSE 500 ETF FOF Direct-Growth
+  source_url: https://groww.in/mutual-funds/icici-prudential-bse-500-etf-fof-direct-growth
+- slug: icici-prudential-constant-maturity-gilt-fund-direct-growth
+  scheme_name: ICICI Prudential Constant Maturity Gilt Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-constant-maturity-gilt-fund-direct-growth
+- slug: icici-prudential-quant-fund-direct-growth
+  scheme_name: ICICI Prudential Quant Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-quant-fund-direct-growth
+- slug: icici-prudential-i-come-opportunities-fund-direct-growth
+  scheme_name: ICICI Prudential Bond Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-i-come-opportunities-fund-direct-growth
+- slug: isif-equity-ex-top-100-long-short-fund-direct-plan-growth
+  scheme_name: iSIF Equity Ex-Top 100 Long-Short Fund (Direct Plan Growth)
+  source_url: https://groww.in/mutual-funds/isif-equity-ex-top-100-long-short-fund-direct-plan-growth
+- slug: isif-hybrid-long-short-fund-direct-plan-growth
+  scheme_name: iSIF Hybrid Long-Short Fund (Direct Plan Growth)
+  source_url: https://groww.in/mutual-funds/isif-hybrid-long-short-fund-direct-plan-growth
+- slug: icici-prudential-nifty-sdl-sep-2026-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty SDL Sep 2026 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-sdl-sep-2026-index-fund-direct-growth
+- slug: icici-prudential-nifty-g-sec-dec-2030-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty G-Sec Dec 2030 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-g-sec-dec-2030-index-fund-direct-growth
+- slug: icici-prudential-nifty-sdl-dec-2028-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty SDL Dec 2028 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-sdl-dec-2028-index-fund-direct-growth
+- slug: icici-prudential-nifty-sdl-sep-2027-index-fund-direct-growth
+  scheme_name: ICICI Prudential Nifty SDL Sep 2027 Index Fund
+  source_url: https://groww.in/mutual-funds/icici-prudential-nifty-sdl-sep-2027-index-fund-direct-growth

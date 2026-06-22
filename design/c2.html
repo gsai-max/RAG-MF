@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mutual Fund FAQ Assistant</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#4eddaf",
+                    "link": "#2563EB",
+                    "input-bg": "#F1F5F9",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#410002",
+                    "surface-variant": "#dde4df",
+                    "on-secondary-fixed": "#111c2d",
+                    "on-error": "#ffffff",
+                    "primary-container": "#00b589",
+                    "outline-variant": "#bbcac1",
+                    "primary-fixed": "#6ffaca",
+                    "secondary-fixed-dim": "#bcc7de",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "disclaimer-text": "#B45309",
+                    "surface-container": "#e8f0ea",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#161d1a",
+                    "secondary": "#545f73",
+                    "secondary-container": "#d5e0f8",
+                    "tertiary": "#a23d34",
+                    "on-secondary-fixed-variant": "#3c475a",
+                    "on-tertiary-container": "#6c1511",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d5dcd6",
+                    "inverse-surface": "#2b322e",
+                    "surface-container-highest": "#dde4df",
+                    "app-background": "#F8FAFC",
+                    "on-error-container": "#93000a",
+                    "on-background": "#161d1a",
+                    "surface-container-low": "#eef5f0",
+                    "tertiary-fixed": "#ffdad5",
+                    "on-primary-container": "#003f2e",
+                    "surface": "#FFFFFF",
+                    "disclaimer-bg": "#FFFBEB",
+                    "primary-fixed-dim": "#4eddaf",
+                    "tertiary-fixed-dim": "#ffb4aa",
+                    "on-primary-fixed-variant": "#00513c",
+                    "surface-bright": "#f4fbf5",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#ebf3ed",
+                    "on-secondary-container": "#586377",
+                    "secondary-fixed": "#d8e3fb",
+                    "border": "#E2E8F0",
+                    "surface-container-high": "#e3eae4",
+                    "primary": "#006c50",
+                    "background": "#f4fbf5",
+                    "outline": "#6c7a73",
+                    "tertiary-container": "#f57c6f",
+                    "on-surface-variant": "#3c4a43",
+                    "text-primary": "#0F172A",
+                    "surface-tint": "#006c50",
+                    "on-primary-fixed": "#002116",
+                    "on-tertiary-fixed-variant": "#82261f",
+                    "text-muted": "#64748B"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "800px",
+                    "gap-bubble": "16px",
+                    "gutter": "16px",
+                    "padding-global": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Outfit"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Outfit"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}]
+            },
+            "animation": {
+              'message-enter': 'message-enter 200ms ease-out forwards',
+              'pulse-fast': 'pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            "keyframes": {
+              'message-enter': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'pulse-fast': {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.05)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-app-background text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="hidden md:flex fixed top-0 left-0 w-full z-50 justify-between items-center px-padding-global h-16 bg-surface/80 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Mutual Fund Assistant</span>
+</div>
+<div class="flex items-center gap-4 text-primary"><button class="flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary rounded-full font-label-md text-label-md hover:opacity-90 transition-opacity shadow-sm mr-2"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>Select Funds</button>
+<button class="hover:bg-surface-container transition-colors p-2 rounded-full flex items-center justify-center opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</button>
+<button class="hover:bg-surface-container transition-colors p-2 rounded-full flex items-center justify-center opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center pt-8 md:pt-28 pb-32 px-gutter w-full">
+<!-- Central Chat Container -->
+<div class="w-full max-w-container-max bg-surface/70 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl flex flex-col overflow-hidden min-h-[70vh]">
+<!-- Local Header (Inside Container) -->
+<div class="w-full py-4 px-6 border-b border-border bg-surface/50">
+<h1 class="font-headline-md text-[20px] font-semibold text-text-primary text-center">
+                    Mutual Fund Assistant
+                </h1>
+</div>
+<!-- Disclaimer Banner -->
+<div class="w-full bg-disclaimer-bg text-disclaimer-text font-label-md text-label-md py-2 px-4 flex justify-center items-center">
+<span class="">⚠️ Facts-only. No investment advice.</span>
+</div>
+<!-- Empty Chat Area -->
+<div class="flex-1 p-6 flex flex-col gap-gap-bubble overflow-y-auto"><div class="flex flex-col gap-6 w-full">
+<!-- User Message -->
+<div class="flex justify-end animate-message-enter motion-reduce:animate-none">
+<div class="max-w-[80%] bg-primary-container text-on-primary p-4 rounded-2xl rounded-br-[2px] shadow-sm">
+<p class="font-body-lg text-[15px]">What is the exit load on ICICI Prudential Commodities Fund?</p>
+</div>
+</div>
+<!-- Assistant Message -->
+<div class="flex justify-start animate-message-enter motion-reduce:animate-none" style="animation-delay: 50ms;">
+<div class="max-w-[85%] bg-surface border border-border p-4 rounded-2xl rounded-bl-[2px] shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<!-- Section 1: Answer Body -->
+<div class="text-text-primary font-body-lg text-[15px]">
+        The exit load is 1% if redeemed within 15 days of allotment. Nil exit load if redeemed after 15 days.
+      </div>
+<!-- Section 2: Citation -->
+<div class="mt-2 pt-2 border-t border-border flex items-center gap-1">
+<a class="text-link font-body-md text-[14px] flex items-center gap-1 hover:underline" href="#">
+          Source: ICICI Prudential Commodities Fund - Groww
+          <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<!-- Section 3: Footer -->
+<div class="mt-1">
+<p class="text-text-muted font-label-sm text-[12px]">Last updated from sources: 2026-05-29</p>
+</div>
+</div>
+</div>
+<!-- New User Message -->
+<div class="flex justify-end animate-message-enter motion-reduce:animate-none" style="animation-delay: 100ms;">
+<div class="max-w-[80%] bg-primary-container text-on-primary p-4 rounded-2xl rounded-br-[2px] shadow-sm">
+<p class="font-body-lg text-[15px]">Should I invest in this fund?</p>
+</div>
+</div>
+<!-- New Assistant Message (Refusal State) -->
+<div class="flex justify-start animate-message-enter motion-reduce:animate-none" style="animation-delay: 150ms;">
+<div class="max-w-[85%] bg-surface border border-border p-4 rounded-2xl rounded-bl-[2px] shadow-[0_2px_4px_rgba(0,0,0,0.02)]">
+<!-- Section 1: Answer Body -->
+<div class="text-text-primary font-body-lg text-[15px]">
+        I can only answer factual questions about ICICI Prudential schemes in my corpus. I cannot provide investment advice or recommend which fund to choose.
+      </div>
+<!-- Section 2: Citation -->
+<div class="mt-2 pt-2 border-t border-border flex items-center gap-1">
+<a class="text-link font-body-md text-[14px] flex items-center gap-1 hover:underline" href="#">
+          Source: AMFI India — Investor Education
+          <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+<!-- Section 3: Footer -->
+<div class="mt-1">
+<p class="text-text-muted font-label-sm text-[12px]">Last updated from sources: 2026-05-29</p>
+</div>
+</div>
+</div>
+</div></div>
+<!-- Input Area -->
+<footer class="p-6 bg-surface border-t border-border">
+<div class="relative flex items-center">
+<input class="peer w-full h-12 bg-input-bg rounded-full flex items-center px-5 border-transparent focus:border-transparent focus:ring-0 text-text-primary font-body-md text-lg placeholder:text-text-muted" placeholder="Ask a factual question about a fund..." type="text"/>
+<button class="absolute right-1 w-10 h-10 bg-primary-container text-on-primary rounded-full flex items-center justify-center shadow-sm hover:opacity-90 transition-opacity peer-focus:animate-pulse-fast motion-reduce:peer-focus:animate-none">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 600;">arrow_upward</span>
+</button>
+</div>
+</footer>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-center items-end pb-8 px-4 max-w-container-max mx-auto bg-transparent">
+<div class="flex items-center gap-2 bg-surface/90 backdrop-blur-md border border-outline-variant/30 p-2 rounded-full shadow-lg">
+<!-- Chat (Active) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-2 scale-95 transition-transform">
+<span class="material-symbols-outlined text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="font-label-md text-[11px] mt-1">Chat</span>
+</button>
+<!-- History (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+<span class="font-label-md text-[11px] mt-1">History</span>
+</button>
+<!-- Funds (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-md text-[11px] mt-1">Funds</span>
+</button>
+</div>
+</nav>
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-inverse-surface/20 backdrop-blur-sm"><div class="w-full max-w-md bg-surface/90 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl flex flex-col overflow-hidden max-h-[80vh]"><div class="p-6 border-b border-border"><div class="flex justify-between items-center mb-4"><h2 class="font-headline-md text-[20px] text-text-primary">Select Funds</h2><button class="text-secondary hover:text-primary"><span class="material-symbols-outlined">close</span></button></div><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">search</span><input class="w-full pl-10 pr-4 py-2 bg-input-bg border-transparent rounded-xl focus:ring-2 focus:ring-primary-container/50 text-body-md" placeholder="Search 110 funds..." type="text"/></div></div><div class="flex-1 overflow-y-auto p-4 space-y-1"><label class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container cursor-pointer transition-colors"><input checked="" class="w-5 h-5 rounded border-outline text-primary-container focus:ring-primary-container" type="checkbox"/><span class="font-body-md text-text-primary">ICICI Prudential Commodities Fund</span></label><label class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container cursor-pointer transition-colors"><input class="w-5 h-5 rounded border-outline text-primary-container focus:ring-primary-container" type="checkbox"/><span class="font-body-md text-text-primary">ICICI Prudential Bluechip Fund</span></label><label class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container cursor-pointer transition-colors"><input class="w-5 h-5 rounded border-outline text-primary-container focus:ring-primary-container" type="checkbox"/><span class="font-body-md text-text-primary">ICICI Prudential Technology Fund</span></label><label class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container cursor-pointer transition-colors"><input class="w-5 h-5 rounded border-outline text-primary-container focus:ring-primary-container" type="checkbox"/><span class="font-body-md text-text-primary">ICICI Prudential Value Discovery Fund</span></label><label class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container cursor-pointer transition-colors"><input class="w-5 h-5 rounded border-outline text-primary-container focus:ring-primary-container" type="checkbox"/><span class="font-body-md text-text-primary">ICICI Prudential Multi-Asset Fund</span></label><label class="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-container cursor-pointer transition-colors"><input class="w-5 h-5 rounded border-outline text-primary-container focus:ring-primary-container" type="checkbox"/><span class="font-body-md text-text-primary">ICICI Prudential Equity &amp; Debt Fund</span></label></div><div class="p-6 border-t border-border flex gap-3"><button class="flex-1 py-2.5 border border-outline-variant text-secondary font-label-md rounded-full hover:bg-surface-container transition-colors">Clear All</button><button class="flex-1 py-2.5 bg-primary-container text-on-primary font-label-md rounded-full hover:opacity-90 transition-opacity shadow-sm">Apply Selection</button></div></div></div></body></html>
