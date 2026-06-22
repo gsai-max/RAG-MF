@@ -90,4 +90,4 @@ Every assistant response must contain a citation and a date footer.
 ---
 
 ## 6. Implementation Status
-The design system described in this document has been fully implemented in the React + Vite single-page application located under the `frontend/` directory. All design tokens, including color palettes, font weights, shadows, warning disclaimers, micro-animations, and viewport layout constraints, have been coded utilizing Tailwind CSS variables in strict alignment with this specification.
+The design system described in this document has been fully implemented in the React + Vite single-page application located under the `frontend/` directory. All design tokens, including color palettes, font weights, shadows, warning disclaimers, micro-animations, and viewport layout constraints, have been coded utilizing Tailwind CSS variables in strict alignment with this specification. The build environment has been configured to compile under Node.js 22 LTS to ensure consistent build transpilation and rendering stability of the Tailwind CSS style tokens across deployment platforms.

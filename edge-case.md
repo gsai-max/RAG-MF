@@ -134,10 +134,14 @@ Addresses client dashboard interactions, build pipelines, and OS compatibility.
 * **Vite/PostCSS Space in Path SyntaxError**:
   * *Description:* Loading external PostCSS configurations inside Vite on Windows could historically throw `SyntaxError: Invalid regular expression: missing /` if the directory path contains spaces (e.g. `C:\Nextleap Projects Git\RAGMF`).
   * *Mitigation:* A standard standalone [postcss.config.js](file:///c:/Nextleap%20Projects%20Git/RAGMF/frontend/postcss.config.js) is used with a simplified [vite.config.ts](file:///c:/Nextleap%20Projects%20Git/RAGMF/frontend/vite.config.ts) containing zero inline PostCSS imports. This ensures that browserslist and Autoprefixer dependencies are resolved correctly at build time, preventing regex parsing failures during config transpilation on Vercel while remaining fully compatible with Windows paths containing spaces.
+* **Vercel Build Error with Experimental Node v24**:
+  * *Description:* Building the frontend with Node.js v24.15.0 on Vercel throws `SyntaxError: Invalid regular expression: missing /` when dynamic import query cache-busting loads `postcss.config.js` due to engine/module loading incompatibilities in experimental Node.js 24 releases.
+  * *Mitigation:* Add `"engines": { "node": "22.x" }` to `frontend/package.json` to force Vercel to build the project using the stable Node.js v22 LTS version.
 * **Stateless API Prompt Scoping**:
   * *Description:* The `/api/chat` API is stateless and doesn't accept schema identifiers. If a user selects a fund in the UI checklist and asks a brief query (*"What is the exit load?"*), the backend retriever fails to match the right scheme.
   * *Mitigation:* If a single fund is active in the selection state and its name isn't present in the user text, the frontend automatically appends the fund's scheme name (e.g., *"... on ICICI Prudential Commodities Fund"*) before calling the backend.
 * **Stale Git Index Lock on Cancelled Commands**:
   * *Description:* Aborting git operations (like staging `node_modules` before they are ignored) leaves a stale `.git/index.lock` file, causing subsequent git runs to fail with `Unable to create index.lock: File exists`.
   * *Mitigation:* Programmatically remove the lock file using `Remove-Item` on `.git/index.lock` prior to running `git reset` to restore normal git flow. Exclude `node_modules/` and build outputs (`dist/`) in `.gitignore` to prevent repeat issues.
+
 

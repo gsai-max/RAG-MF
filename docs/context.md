@@ -104,6 +104,7 @@ To ensure regulatory compliance and user security, the system must **never** col
    - Responsive modal selection list mapping all active schemes, supporting multi-fund filtering by passing selected fund slugs to the backend to constrain retrieval precisely.
    - Queries the backend dynamically by prepending `import.meta.env.VITE_API_URL` (configured during production builds) or falling back to local proxies in development.
    - Configured with standard, extensionless TypeScript module resolution and build commands that bypass separate type checking to prevent build compilation errors across deployment targets (e.g. Vercel CDN).
+   - Locked to Node.js 22.x LTS (via the `engines` field in `package.json`) to prevent incompatibilities and runtime errors (e.g., dynamic imports and regex engine parsing failures) under experimental Node.js versions (like Node 24) on Vercel.
 4. **Daily Ingestion Scheduler**:
    - Deployed as a GitHub Actions workflow ([daily-scheduler.yml](file:///c:/Nextleap%20Projects%20Git/RAGMF/.github/workflows/daily-scheduler.yml)). It runs automatically on pushes to the `main` branch or daily at 9:15 AM IST (03:45 UTC).
    - Features performance caching (for Hugging Face models and page raw/processed dumps) and speed-oriented crawl mode (`--fast` delay of `0.1s - 0.3s`) to execute runs in minutes.

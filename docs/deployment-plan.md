@@ -260,7 +260,7 @@ volumes:
 6.  Click **Deploy**.
 
 > [!NOTE]
-> The TypeScript codebase uses standard extensionless module imports (e.g., `import App from './App'`) and resolves imports without enabling `allowImportingTsExtensions` in `tsconfig.json`. The package build command is set directly to `vite build` to bypass separate `tsc` type-checking blocks, ensuring that Vercel executes builds cleanly without throwing environment-specific compiler exceptions.
+> The TypeScript codebase uses standard extensionless module imports (e.g., `import App from './App'`) and resolves imports without enabling `allowImportingTsExtensions` in `tsconfig.json`. The package build command is set directly to `vite build` to bypass separate `tsc` type-checking blocks, ensuring that Vercel executes builds cleanly without throwing environment-specific compiler exceptions. Additionally, the project explicitly locks the build environment to Node.js **22.x LTS** via `package.json` to prevent dynamic import and regex parser failures caused by experimental Node.js 24 releases.
 
 ---
 
