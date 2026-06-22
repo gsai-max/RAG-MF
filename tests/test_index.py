@@ -102,6 +102,7 @@ def test_get_embedding_function_prod(monkeypatch):
     ef = get_embedding_function()
     assert isinstance(ef, HuggingFaceInferenceEmbeddingFunction)
     assert ef.api_key == "mock_hf_key"
+    assert ef.name() == "sentence_transformer"
 
 def test_get_embedding_function_render(monkeypatch):
     """Verify that get_embedding_function returns HuggingFaceInferenceEmbeddingFunction when RENDER=true."""
@@ -111,3 +112,4 @@ def test_get_embedding_function_render(monkeypatch):
     
     ef = get_embedding_function()
     assert isinstance(ef, HuggingFaceInferenceEmbeddingFunction)
+    assert ef.name() == "sentence_transformer"

@@ -108,6 +108,7 @@ To ensure regulatory compliance and user security, the system must **never** col
    - Uploads the persistent vector database indices directory as a downloadable ZIP workflow artifact (`RAG-MF-index-database`).
 5. **Memory-Optimized Production Build**:
    - Engineered to run on resource-constrained cloud environments (such as Render's 512MB Free Tier) by dynamically offloading query embedding extraction to the Hugging Face Inference API. This bypasses the need to load PyTorch or the embedding model weights locally on the web service container.
+   - The custom `HuggingFaceInferenceEmbeddingFunction` class satisfies the ChromaDB custom embedding function protocol by implementing a `name()` method returning `"sentence_transformer"`, ensuring absolute compatibility with vector databases created locally or in production.
 
 ---
 

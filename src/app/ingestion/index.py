@@ -19,6 +19,9 @@ class HuggingFaceInferenceEmbeddingFunction:
         self.api_key = api_key
         self.url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{model_name}"
 
+    def name(self) -> str:
+        return "sentence_transformer"
+
     def __call__(self, input: list[str]) -> list[list[float]]:
         import requests
         headers = {}

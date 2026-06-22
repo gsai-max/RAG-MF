@@ -392,7 +392,7 @@ Or for multi-fund filtering:
 |---|---|---|
 | **Frontend** | React (Vite) | Minimal chat UI, fast to ship, rich and responsive styling |
 | **Backend** | Python (FastAPI) | Strong RAG ecosystem in Python, fast async execution |
-| **Embeddings** | BGE-small-en-v1.5 (dynamic: local sentence-transformers in dev; Hugging Face Inference API in production) | Free and lightweight; avoids loading PyTorch locally to prevent memory exhaustion (e.g. Render's 512MB RAM limit) |
+| **Embeddings** | BGE-small-en-v1.5 (dynamic: local sentence-transformers in dev; Hugging Face Inference API in production) | Free and lightweight; avoids loading PyTorch locally to prevent memory exhaustion (e.g. Render's 512MB RAM limit). The custom `HuggingFaceInferenceEmbeddingFunction` implements `name() -> "sentence_transformer"` for cross-environment index format compatibility. |
 | **Vector DB** | ChromaDB (local persistent) | Metadata filtering, ease of setup, file-backed storage |
 | **LLM** | Gemini 1.5 Flash or Groq (llama-3.3-70b) | High accuracy, strict constraint compliance, fast responses |
 | **Ingestion** | BeautifulSoup / requests | Lightweight scraping and parsing of Groww scheme pages |

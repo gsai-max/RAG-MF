@@ -119,7 +119,8 @@ To run the FastAPI server within constrained hosting environments (such as Rende
 1.  **Automatic Environment Detection**: The server checks for `RENDER=true` or `ENV=prod` or `USE_HF_API=true` environment variables on startup.
 2.  **Lightweight API Swapping**: When triggered, it dynamically uses the custom `HuggingFaceInferenceEmbeddingFunction` class.
 3.  **Hugging Face Inference API**: Query embedding is offloaded to Hugging Face's public API via HTTP POST requests, saving model weights and PyTorch imports. This shrinks the container RAM from **600MB+** down to **~70MB**.
-4.  **Error Resilience**: The custom function includes automatic retry handling on model cold starts (HTTP 503) and enforces a 15-second request timeout.
+4.  **ChromaDB Protocol Compatibility**: The custom `HuggingFaceInferenceEmbeddingFunction` class implements `name() -> "sentence_transformer"` to satisfy ChromaDB custom embedding protocols. Naming it `"sentence_transformer"` aligns it with indices created locally using the default local embedding function, preventing any cross-environment configuration mismatch crashes on startup.
+5.  **Error Resilience**: The custom function includes automatic retry handling on model cold starts (HTTP 503) and enforces a 15-second request timeout.
 
 ---
 
