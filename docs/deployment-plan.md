@@ -112,6 +112,15 @@ Since standard container engines (like AWS ECS or GCP Cloud Run) are stateless, 
         1.  Push the zipped index artifact to an **AWS S3** or **Google Cloud Storage** bucket.
         2.  Trigger a webhook on the FastAPI container (e.g. `/api/reload-index`), prompting the server to download, extract the zip, and swap the directories locally.
 
+### 3.2 Production Memory Optimization (Hugging Face API Fallback)
+
+To run the FastAPI server within constrained hosting environments (such as Render's 512MB Free Tier), the backend bypasses PyTorch and the local SentenceTransformer model loading in production:
+
+1.  **Automatic Environment Detection**: The server checks for `RENDER=true` or `ENV=prod` or `USE_HF_API=true` environment variables on startup.
+2.  **Lightweight API Swapping**: When triggered, it dynamically uses the custom `HuggingFaceInferenceEmbeddingFunction` class.
+3.  **Hugging Face Inference API**: Query embedding is offloaded to Hugging Face's public API via HTTP POST requests, saving model weights and PyTorch imports. This shrinks the container RAM from **600MB+** down to **~70MB**.
+4.  **Error Resilience**: The custom function includes automatic retry handling on model cold starts (HTTP 503) and enforces a 15-second request timeout.
+
 ---
 
 ## 4. CI/CD pipelines
