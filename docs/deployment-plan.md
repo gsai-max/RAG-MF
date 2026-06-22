@@ -260,7 +260,7 @@ volumes:
 6.  Click **Deploy**.
 
 > [!NOTE]
-> The TypeScript codebase uses standard extensionless module imports (e.g., `import App from './App'`) and resolves imports without enabling `allowImportingTsExtensions` in `tsconfig.json`. The package build command is set directly to `vite build` to bypass separate `tsc` type-checking blocks, ensuring that Vercel executes builds cleanly without throwing environment-specific compiler exceptions. Additionally, the project configures PostCSS (Tailwind and Autoprefixer) inline inside [vite.config.ts](file:///c:/Nextleap%20Projects%20Git/RAGMF/frontend/vite.config.ts) and excludes external `postcss.config.js` files entirely to prevent dynamic import and regex parser failures (`SyntaxError: Invalid regular expression: missing /`) under Vercel's node environments.
+> The TypeScript codebase uses standard extensionless module imports (e.g., `import App from './App'`) and resolves imports without enabling `allowImportingTsExtensions` in `tsconfig.json`. The package build command is set directly to `vite build` to bypass separate `tsc` type-checking blocks, ensuring that Vercel executes builds cleanly without throwing environment-specific compiler exceptions. Additionally, the project configures PostCSS (Tailwind CSS) inline inside [vite.config.ts](file:///c:/Nextleap%20Projects%20Git/RAGMF/frontend/vite.config.ts), excludes external `postcss.config.js` files entirely, and removes `autoprefixer` and `postcss` devDependencies from `package.json` to prevent dynamic dependency tracing and regex parser failures (`SyntaxError: Invalid regular expression: missing /` inside `browserslist/node.js`) triggered by Vercel's `@vercel/nft` utility at build time.
 
 ---
 
