@@ -259,6 +259,9 @@ volumes:
     *   `VITE_API_URL`: `[URL of the deployed backend service]` (e.g. `https://ragmf-api.onrender.com`). The frontend dynamically references `import.meta.env.VITE_API_URL` to route calls to the correct API host at build time.
 6.  Click **Deploy**.
 
+> [!NOTE]
+> The TypeScript codebase uses standard extensionless module imports (e.g., `import App from './App'`) and resolves imports without enabling `allowImportingTsExtensions` in `tsconfig.json`. This ensures that Vercel's build task (`tsc && vite build`) executes cleanly without throwing environment-specific type-checking blocks.
+
 ---
 
 ## 6. Post-Deployment Verification & Smoke Tests
