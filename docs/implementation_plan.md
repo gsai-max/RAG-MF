@@ -104,7 +104,7 @@ graph TD
 * **Objective**: Transforming raw parsed text sections into searchable vector embeddings and mapping metadata.
 * **Tasks**:
   1. Implement chunker ([chunk.py](file:///c:/Nextleap%20Projects%20Git/RAGMF/src/app/ingestion/chunk.py)) applying section-aware splits and appending metadata parent attributes (`source_url`, `section`, `last_updated`).
-  2. Implement index creator ([index.py](file:///c:/Nextleap%20Projects%20Git/RAGMF/src/app/ingestion/index.py)) using ChromaDB (local persistent) or FAISS to embed chunks.
+  2. Implement index creator ([index.py](file:///c:/Nextleap%20Projects%20Git/RAGMF/src/app/ingestion/index.py)) using ChromaDB, configured to dynamically load the `SentenceTransformer` (BGE-small) model locally in dev/ingestion, but route through the Hugging Face Inference API in production to save RAM (bypassing local PyTorch imports on environments like Render Free Tier).
   3. Create scheme metadata index (JSON/SQLite file lookup) to store scheme metadata mapping for resolution.
   4. Update crawler entrypoint script to execute indexing bulk runs ([run.py](file:///c:/Nextleap%20Projects%20Git/RAGMF/src/app/ingestion/run.py)), ensuring chunk list deduplication by ID occurs before indexing to prevent database unique constraint failures.
 * **Deliverables**: Chunking pipeline, local vector database storage files under `data/index/`, and metadata schema.

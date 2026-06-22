@@ -3,7 +3,6 @@ import json
 import logging
 from pathlib import Path
 import chromadb
-from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 
 from src.app.config import load_settings
 
@@ -14,8 +13,22 @@ COLLECTION_NAME = "mutual_funds"
 METADATA_INDEX_FILE = "scheme_metadata.json"
 
 def get_embedding_function():
-    """Get BGE-small embedding function."""
-    logger.info("Initializing BGE-small embedding function...")
+    """Get BGE-small embedding function (local or API fallback)."""
+    env = os.environ.get("ENV", "dev").lower()
+    
+    if env == "prod" or os.environ.get("USE_HF_API", "false").lower() == "true":
+        logger.info("Initializing Hugging Face Inference API embedding function to save memory...")
+        from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
+        hf_token = os.environ.get("HF_API_KEY") or os.environ.get("HF_TOKEN")
+        if not hf_token:
+            logger.warning("HF_API_KEY / HF_TOKEN is not set. Hugging Face Inference API requests will be unauthenticated and subject to rate limits.")
+        return HuggingFaceEmbeddingFunction(
+            api_key=hf_token or "",
+            model_name="BAAI/bge-small-en-v1.5"
+        )
+        
+    logger.info("Initializing local BGE-small embedding function via sentence-transformers...")
+    from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
     return SentenceTransformerEmbeddingFunction(model_name="BAAI/bge-small-en-v1.5")
 
 def get_chroma_client(db_path: Path | str = None):

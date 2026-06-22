@@ -92,3 +92,13 @@ def test_metadata_index_registry():
     assert entry["category"] == "Equity — Large Cap"
     assert entry["source_url"] == "https://groww.in/test-fund"
     assert entry["nav"] == "₹150.00"
+
+def test_get_embedding_function_prod(monkeypatch):
+    """Verify that get_embedding_function returns HuggingFaceEmbeddingFunction under prod."""
+    monkeypatch.setenv("ENV", "prod")
+    monkeypatch.setenv("HF_API_KEY", "mock_hf_key")
+    from src.app.ingestion.index import get_embedding_function
+    from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
+    
+    ef = get_embedding_function()
+    assert isinstance(ef, HuggingFaceEmbeddingFunction)
