@@ -15,8 +15,9 @@ METADATA_INDEX_FILE = "scheme_metadata.json"
 def get_embedding_function():
     """Get BGE-small embedding function (local or API fallback)."""
     env = os.environ.get("ENV", "dev").lower()
+    is_render = os.environ.get("RENDER") == "true"
     
-    if env == "prod" or os.environ.get("USE_HF_API", "false").lower() == "true":
+    if is_render or env == "prod" or os.environ.get("USE_HF_API", "false").lower() == "true":
         logger.info("Initializing Hugging Face Inference API embedding function to save memory...")
         from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
         hf_token = os.environ.get("HF_API_KEY") or os.environ.get("HF_TOKEN")

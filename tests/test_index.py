@@ -102,3 +102,13 @@ def test_get_embedding_function_prod(monkeypatch):
     
     ef = get_embedding_function()
     assert isinstance(ef, HuggingFaceEmbeddingFunction)
+
+def test_get_embedding_function_render(monkeypatch):
+    """Verify that get_embedding_function returns HuggingFaceEmbeddingFunction when RENDER=true."""
+    monkeypatch.setenv("RENDER", "true")
+    monkeypatch.setenv("ENV", "dev")
+    from src.app.ingestion.index import get_embedding_function
+    from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
+    
+    ef = get_embedding_function()
+    assert isinstance(ef, HuggingFaceEmbeddingFunction)
