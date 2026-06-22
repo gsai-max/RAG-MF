@@ -256,7 +256,7 @@ volumes:
 3.  Set the **Root Directory** to `frontend`.
 4.  Leave the build settings as default (detected Vite config).
 5.  Add the environment variables:
-    *   `VITE_API_URL`: `[URL of the deployed backend service]` (e.g. `https://ragmf-api.onrender.com`)
+    *   `VITE_API_URL`: `[URL of the deployed backend service]` (e.g. `https://ragmf-api.onrender.com`). The frontend dynamically references `import.meta.env.VITE_API_URL` to route calls to the correct API host at build time.
 6.  Click **Deploy**.
 
 ---

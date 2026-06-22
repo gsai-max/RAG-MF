@@ -184,6 +184,7 @@ graph TD
   1. Initialize React project using Vite inside `frontend/` directory. (Completed)
   2. Code CSS styling with Outfit/Inter typography, modern glassmorphism panels, soft gradients, and micro-animations for message bubble renders. (Completed)
   3. Implement chat components: disclaimer header ("Facts-only. No investment advice."), chat window, 3 clickable example card triggers, scheme selection modal checklist, and output templates mapping citations and last-updated footers. Updated to pass the array of selected fund slugs (`selectedSlugs`) directly inside the API request body. (Completed)
+  4. Integrate `import.meta.env.VITE_API_URL` to route fetches to the deployed backend domain in production. (Completed)
 * **Deliverables**: React TypeScript codebase, Tailwind layout styles, and interactive state components.
 * **Exit Criteria**: Web dashboard renders nicely on desktop and mobile viewports, capturing queries and rendering responses properly. (Verified)
 * **Dependencies**: Phase 6.
