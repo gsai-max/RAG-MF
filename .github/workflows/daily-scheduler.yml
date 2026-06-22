@@ -4,6 +4,8 @@ on:
   schedule:
     # Run daily at 03:45 UTC (9:15 AM IST)
     - cron: '45 3 * * *'
+  push:
+    branches: [ main ]
   workflow_dispatch:
     # Allow manual execution via the Actions tab in GitHub
     inputs:
@@ -16,6 +18,11 @@ on:
         description: 'Limit the number of schemes to process (for testing)'
         type: number
         required: false
+      fast:
+        description: 'Run crawler with minimal request delay (0.1s - 0.3s) for speed'
+        type: boolean
+        required: false
+        default: true
 
 jobs:
   run-scheduler:
@@ -31,6 +38,24 @@ jobs:
         python-version: '3.10'
         cache: 'pip'
 
+    - name: Cache Hugging Face models
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/huggingface
+        key: huggingface-models-cache
+        restore-keys: |
+          huggingface-models-cache
+
+    - name: Cache Scraper & Parser Data
+      uses: actions/cache@v4
+      with:
+        path: |
+          data/raw
+          data/processed
+        key: groww-data-cache
+        restore-keys: |
+          groww-data-cache
+
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
@@ -44,9 +69,12 @@ jobs:
         CHROMA_DB_PATH: data/index/
         LOG_LEVEL: INFO
       run: |
-        # Parse inputs if triggered manually
-        FLAGS=""
+        FLAGS="--fast"
         if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          FLAGS=""
+          if [ "${{ github.event.inputs.fast }}" = "true" ]; then
+            FLAGS="$FLAGS --fast"
+          fi
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
             FLAGS="$FLAGS --force"
           fi
@@ -57,3 +85,11 @@ jobs:
         
         # Execute daily.py with --now to run once and exit
         python scheduler/daily.py --now $FLAGS
+
+    - name: Upload Ingestion Database Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: RAG-MF-index-database
+        path: data/
+        if-no-files-found: error
+        retention-days: 7

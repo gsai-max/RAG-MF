@@ -24,7 +24,7 @@ logging.basicConfig(
 
 logger = logging.getLogger("ingestion_runner")
 
-def run_ingestion(limit: int = None, force: bool = False, db_path: Path = None):
+def run_ingestion(limit: int = None, force: bool = False, db_path: Path = None, delay_range: tuple[float, float] = (1.5, 3.5)):
     lock_file = ROOT_DIR / "crawler.lock"
     if lock_file.exists():
         logger.error(f"Ingestion lock file '{lock_file}' is present. Another instance might be running. Aborting.")
@@ -33,7 +33,7 @@ def run_ingestion(limit: int = None, force: bool = False, db_path: Path = None):
         with open(lock_file, "w", encoding="utf-8") as lf:
             lf.write(str(os.getpid()))
         logger.info(f"Created lock file: {lock_file}")
-        return _run_ingestion_internal(limit, force, db_path)
+        return _run_ingestion_internal(limit, force, db_path, delay_range)
     finally:
         if lock_file.exists():
             try:
@@ -42,7 +42,7 @@ def run_ingestion(limit: int = None, force: bool = False, db_path: Path = None):
             except Exception as e:
                 logger.error(f"Failed to remove lock file: {e}")
 
-def _run_ingestion_internal(limit: int = None, force: bool = False, db_path: Path = None):
+def _run_ingestion_internal(limit: int = None, force: bool = False, db_path: Path = None, delay_range: tuple[float, float] = (1.5, 3.5)):
     """
     Orchestrate fetching, parsing, caching, chunking, and indexing of Groww pages.
     """
@@ -98,7 +98,7 @@ def _run_ingestion_internal(limit: int = None, force: bool = False, db_path: Pat
     processed_dir.mkdir(parents=True, exist_ok=True)
 
     # Initialize modules
-    scraper = GrowwScraper(raw_data_dir=raw_dir)
+    scraper = GrowwScraper(raw_data_dir=raw_dir, delay_range=delay_range)
     parser = GrowwParser()
 
     stats = {

@@ -29,7 +29,7 @@ def get_next_run_time(now_ist: datetime, target_hour: int = 9, target_minute: in
         target += timedelta(days=1)
     return target
 
-def start_scheduler(target_hour: int = 9, target_minute: int = 15):
+def start_scheduler(target_hour: int = 9, target_minute: int = 15, delay_range: tuple[float, float] = (1.5, 3.5)):
     """Run the scheduler background loop checking every 10 seconds."""
     logger.info(f"Starting scheduler. Target run time: {target_hour:02d}:{target_minute:02d} AM IST daily.")
     
@@ -48,7 +48,7 @@ def start_scheduler(target_hour: int = 9, target_minute: int = 15):
                 # Advance target before running to prevent overlapping triggers
                 next_run = get_next_run_time(now + timedelta(minutes=1), target_hour, target_minute)
                 
-                success = run_ingestion(force=True)
+                success = run_ingestion(force=True, delay_range=delay_range)
                 if success:
                     logger.info("Daily ingestion pipeline completed successfully.")
                 else:
@@ -70,11 +70,14 @@ if __name__ == "__main__":
     parser.add_argument("--minute", type=int, default=15, help="Minute to run daily (0-59)")
     parser.add_argument("--limit", type=int, help="Limit number of schemes to process for debugging")
     parser.add_argument("--force", action="store_true", help="Force fetching fresh content instead of using cache")
+    parser.add_argument("--fast", action="store_true", help="Run crawler with minimal request delay (0.1s - 0.3s) for speed")
     args = parser.parse_args()
 
+    delay_range = (0.1, 0.3) if args.fast else (1.5, 3.5)
+
     if args.now:
-        logger.info(f"Forced immediate ingestion run initiated via CLI flag (limit={args.limit}, force={args.force})...")
-        success = run_ingestion(limit=args.limit, force=args.force)
+        logger.info(f"Forced immediate ingestion run initiated via CLI flag (limit={args.limit}, force={args.force}, fast={args.fast})...")
+        success = run_ingestion(limit=args.limit, force=args.force, delay_range=delay_range)
         sys.exit(0 if success else 1)
     else:
-        start_scheduler(target_hour=args.hour, target_minute=args.minute)
+        start_scheduler(target_hour=args.hour, target_minute=args.minute, delay_range=delay_range)
