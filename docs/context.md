@@ -103,7 +103,9 @@ To ensure regulatory compliance and user security, the system must **never** col
    - Single-page application built inside `frontend/` using Vite, React, TypeScript, and Tailwind CSS.
    - Responsive modal selection list mapping all active schemes, supporting multi-fund filtering by passing selected fund slugs to the backend to constrain retrieval precisely.
 4. **Daily Ingestion Scheduler**:
-   - Scheduled GitHub Actions workflow configured to run daily at 9:15 AM IST (03:45 UTC) to update the vector database index.
+   - Deployed as a GitHub Actions workflow ([daily-scheduler.yml](file:///c:/Nextleap%20Projects%20Git/RAGMF/.github/workflows/daily-scheduler.yml)). It runs automatically on pushes to the `main` branch or daily at 9:15 AM IST (03:45 UTC).
+   - Features performance caching (for Hugging Face models and page raw/processed dumps) and speed-oriented crawl mode (`--fast` delay of `0.1s - 0.3s`) to execute runs in minutes.
+   - Uploads the persistent vector database indices directory as a downloadable ZIP workflow artifact (`RAG-MF-index-database`).
 
 ---
 

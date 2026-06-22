@@ -249,7 +249,7 @@ A dedicated scheduler component runs the full ingestion pipeline on a fixed dail
 | **GitHub Actions** scheduled workflow (Implemented) | Repo-hosted corpus refresh with no dedicated worker |
 | **Cloud scheduler** (AWS EventBridge, GCP Cloud Scheduler) | Managed production environments |
 
-*Note: In this project, the **GitHub Actions** option has been implemented and is configured at [daily-scheduler.yml](file:///c:/Nextleap%20Projects%20Git/RAGMF/.github/workflows/daily-scheduler.yml) to run `scheduler/daily.py --now` daily at 9:15 AM IST (03:45 UTC), with manual trigger support.*
+*Note: In this project, the **GitHub Actions** option has been implemented and is configured at [daily-scheduler.yml](file:///c:/Nextleap%20Projects%20Git/RAGMF/.github/workflows/daily-scheduler.yml). It is configured to run daily at 9:15 AM IST (03:45 UTC), on pushes to the `main` branch, or via manual trigger dispatch. The runs are optimized for execution speed (using the `--fast` crawl delay of `0.1s - 0.3s` and caching Python dependencies, raw pages, and Hugging Face embedding model layers). The output vector database index folders are archived and uploaded as a build run artifact (`RAG-MF-index-database`).*
 
 * **Scheduler flow:**
 ```mermaid

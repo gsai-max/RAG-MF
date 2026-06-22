@@ -167,12 +167,12 @@ graph TD
 
 ### Phase 7: Daily Scheduler Task — [COMPLETED]
 * **Objective**: Setting up the daily schedule to trigger ingestion updates.
-* **Status**: Completed successfully. Developed a standard-library background worker script (`daily.py`) running daily execution scheduling calculations at 9:15 AM IST, integrated with the runner's atomic directory swap (`index_A`/`index_B`) mechanism via the active pointers tracker. Covered by unit tests (`test_scheduler.py`). Also implemented and deployed a GitHub Actions scheduled workflow (`daily-scheduler.yml`) to automatically run the daily ingestion pipeline at 9:15 AM IST daily and support manual triggering.
+* **Status**: Completed successfully. Developed a standard-library background worker script (`daily.py`) running daily execution scheduling calculations at 9:15 AM IST, integrated with the runner's atomic directory swap (`index_A`/`index_B`) mechanism via the active pointers tracker. Covered by unit tests (`test_scheduler.py`). Also implemented and deployed a GitHub Actions workflow (`daily-scheduler.yml`) to automatically run the daily ingestion pipeline (with trigger options on schedule, push to `main` branch, or manual dispatch, optimized with crawler `--fast` delay options, HuggingFace/scraped caches, and ZIP build artifact uploads).
 * **Tasks**:
   1. Implement scheduler script ([daily.py](file:///c:/Nextleap%20Projects%20Git/RAGMF/scheduler/daily.py)) running daily cron logic (e.g., using APScheduler or Python background worker). (Completed)
   2. Add logic to build indexes atomically, swapping the vector database files once complete without blocking retrieval. (Completed)
-  3. Configure a scheduled GitHub Actions workflow ([daily-scheduler.yml](file:///c:/Nextleap%20Projects%20Git/RAGMF/.github/workflows/daily-scheduler.yml)) to run `scheduler/daily.py --now` daily at 9:15 AM IST (03:45 UTC) and support manual triggering. (Completed)
-* **Deliverables**: Daily crawler scheduler script, atomic swap workflow logs, and GitHub Actions workflow file.
+  3. Configure a scheduled GitHub Actions workflow ([daily-scheduler.yml](file:///c:/Nextleap%20Projects%20Git/RAGMF/.github/workflows/daily-scheduler.yml)) to run `scheduler/daily.py --now` daily at 9:15 AM IST (03:45 UTC), automatically on push to `main`, or via manual triggering, utilizing `--fast` execution delay (`0.1s - 0.3s`), dependency caching (raw scraper dumps & HuggingFace hub models), and zip artifact archiving. (Completed)
+* **Deliverables**: Daily crawler scheduler script, atomic swap workflow logs, and optimized GitHub Actions workflow file with build run database artifacts.
 * **Exit Criteria**: Triggering the schedule refreshes the data files cleanly. (Verified)
 * **Dependencies**: Phase 2.
 
