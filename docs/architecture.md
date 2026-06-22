@@ -73,7 +73,7 @@ A premium, responsive single-page chat dashboard built inside the `frontend/` di
   * Render assistant replies inside message cards complete with Groww source citation links (external link icon) and `Last updated from sources: <date>` metadata footers.
   * Prevent PII submission by scrubbing Aadhaar, PAN, emails, and phone patterns (redundantly sanitized at both UI input limits and backend scrubber levels).
   * Expose a **Select Schemes** Modal checklist populated dynamically from `/api/funds`. Toggled active selections are sent directly to the backend `/api/chat` endpoint inside the `selected_funds` payload. For single fund selections, the UI may also suffix query context (e.g. *“What is the NAV?”* -> *“What is the NAV? on ICICI Prudential Commodities Fund”*) for additional clarification. In production, these requests are routed dynamically via `import.meta.env.VITE_API_URL` prepended to the relative paths.
-  * Uses standard extensionless imports (e.g., `import App from './App'`) and a clean `tsconfig.json` configurations without `allowImportingTsExtensions` to guarantee reliable deployment builds under standard TypeScript environments (such as Vercel).
+  * Uses standard extensionless imports (e.g., `import App from './App'`), clean `tsconfig.json` configurations without `allowImportingTsExtensions`, and runs `vite build` directly to bypass separate `tsc` type checking steps and guarantee reliable deployment builds under standard TypeScript environments (such as Vercel).
 * **Suggested example questions:**
   1. *What is the expense ratio of ICICI Prudential Large Cap Fund?*
   2. *What is the exit load on ICICI Prudential Commodities Fund?*

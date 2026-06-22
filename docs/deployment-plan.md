@@ -260,7 +260,7 @@ volumes:
 6.  Click **Deploy**.
 
 > [!NOTE]
-> The TypeScript codebase uses standard extensionless module imports (e.g., `import App from './App'`) and resolves imports without enabling `allowImportingTsExtensions` in `tsconfig.json`. This ensures that Vercel's build task (`tsc && vite build`) executes cleanly without throwing environment-specific type-checking blocks.
+> The TypeScript codebase uses standard extensionless module imports (e.g., `import App from './App'`) and resolves imports without enabling `allowImportingTsExtensions` in `tsconfig.json`. The package build command is set directly to `vite build` to bypass separate `tsc` type-checking blocks, ensuring that Vercel executes builds cleanly without throwing environment-specific compiler exceptions.
 
 ---
 
