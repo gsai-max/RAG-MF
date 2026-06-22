@@ -12,6 +12,34 @@ logger = logging.getLogger(__name__)
 COLLECTION_NAME = "mutual_funds"
 METADATA_INDEX_FILE = "scheme_metadata.json"
 
+class HuggingFaceInferenceEmbeddingFunction:
+    """Custom Hugging Face Inference API Embedding Function to avoid strict init validation."""
+    def __init__(self, model_name: str = "BAAI/bge-small-en-v1.5", api_key: str = None):
+        self.model_name = model_name
+        self.api_key = api_key
+        self.url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{model_name}"
+
+    def __call__(self, input: list[str]) -> list[list[float]]:
+        import requests
+        headers = {}
+        if self.api_key:
+            headers["Authorization"] = f"Bearer {self.api_key}"
+            
+        logger.info(f"Requesting embeddings from Hugging Face Inference API: {self.model_name}")
+        response = requests.post(self.url, headers=headers, json={"inputs": input}, timeout=15)
+        
+        if response.status_code == 503:
+            # Model is loading on Hugging Face side, wait and retry once
+            logger.warning("Model is loading on Hugging Face. Retrying in 5 seconds...")
+            import time
+            time.sleep(5)
+            response = requests.post(self.url, headers=headers, json={"inputs": input}, timeout=15)
+            
+        if response.status_code != 200:
+            raise Exception(f"Hugging Face Inference API error ({response.status_code}): {response.text}")
+            
+        return response.json()
+
 def get_embedding_function():
     """Get BGE-small embedding function (local or API fallback)."""
     env = os.environ.get("ENV", "dev").lower()
@@ -19,12 +47,11 @@ def get_embedding_function():
     
     if is_render or env == "prod" or os.environ.get("USE_HF_API", "false").lower() == "true":
         logger.info("Initializing Hugging Face Inference API embedding function to save memory...")
-        from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
         hf_token = os.environ.get("HF_API_KEY") or os.environ.get("HF_TOKEN")
         if not hf_token:
-            logger.warning("HF_API_KEY / HF_TOKEN is not set. Hugging Face Inference API requests will be unauthenticated and subject to rate limits.")
-        return HuggingFaceEmbeddingFunction(
-            api_key=hf_token or "",
+            logger.warning("HF_API_KEY / HF_TOKEN is not set. Hugging Face Inference API requests will be unauthenticated.")
+        return HuggingFaceInferenceEmbeddingFunction(
+            api_key=hf_token,
             model_name="BAAI/bge-small-en-v1.5"
         )
         

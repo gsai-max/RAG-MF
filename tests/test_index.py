@@ -94,21 +94,20 @@ def test_metadata_index_registry():
     assert entry["nav"] == "₹150.00"
 
 def test_get_embedding_function_prod(monkeypatch):
-    """Verify that get_embedding_function returns HuggingFaceEmbeddingFunction under prod."""
+    """Verify that get_embedding_function returns HuggingFaceInferenceEmbeddingFunction under prod."""
     monkeypatch.setenv("ENV", "prod")
     monkeypatch.setenv("HF_API_KEY", "mock_hf_key")
-    from src.app.ingestion.index import get_embedding_function
-    from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
+    from src.app.ingestion.index import get_embedding_function, HuggingFaceInferenceEmbeddingFunction
     
     ef = get_embedding_function()
-    assert isinstance(ef, HuggingFaceEmbeddingFunction)
+    assert isinstance(ef, HuggingFaceInferenceEmbeddingFunction)
+    assert ef.api_key == "mock_hf_key"
 
 def test_get_embedding_function_render(monkeypatch):
-    """Verify that get_embedding_function returns HuggingFaceEmbeddingFunction when RENDER=true."""
+    """Verify that get_embedding_function returns HuggingFaceInferenceEmbeddingFunction when RENDER=true."""
     monkeypatch.setenv("RENDER", "true")
     monkeypatch.setenv("ENV", "dev")
-    from src.app.ingestion.index import get_embedding_function
-    from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
+    from src.app.ingestion.index import get_embedding_function, HuggingFaceInferenceEmbeddingFunction
     
     ef = get_embedding_function()
-    assert isinstance(ef, HuggingFaceEmbeddingFunction)
+    assert isinstance(ef, HuggingFaceInferenceEmbeddingFunction)
