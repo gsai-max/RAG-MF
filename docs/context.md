@@ -102,6 +102,8 @@ To ensure regulatory compliance and user security, the system must **never** col
 3. **Interactive React Dashboard**:
    - Single-page application built inside `frontend/` using Vite, React, TypeScript, and Tailwind CSS.
    - Responsive modal selection list mapping all active schemes, supporting multi-fund filtering by passing selected fund slugs to the backend to constrain retrieval precisely.
+4. **Daily Ingestion Scheduler**:
+   - Scheduled GitHub Actions workflow configured to run daily at 9:15 AM IST (03:45 UTC) to update the vector database index.
 
 ---
 
